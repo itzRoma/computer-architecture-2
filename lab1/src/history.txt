@@ -1,0 +1,111 @@
+    1  clear // очищення терміналу 
+    2  uname -a // інформація про систему
+    3  sudo apt upgrade // завантажує та встановлює оновлення пакетів
+    4  cat /etc/apt/sources.list // перелік репозиторіїв
+    5  sudo apt-get install vim vim-gtk // встановлення текстового редактора vim, та додаткового пакету vim-gtk для підсвічування тексту та ін.
+    6  cd Downloads/ // перехід в директорію Downloads
+    7  ;s // опечатка
+    8  ls // виводить список файлів і директорій папки, у якій знаходимся
+    9  man ls // довідка команди 'ls'
+   10  ls -l // відображає повну інформацію файлів і папок поточної директорії
+   11  cd // перехід в домашню директорію
+   12  ls -l
+   13  ls -la // повна інформація про всі файли і папки (включаючи приховані)
+   14  ls -lA // те саме що й' ls -la', тільки без директорій '.' і '..'
+   15  cd
+   16  ls
+   17  echo 'hello' // вивід в термінал рядка 'hello'
+   18  echo pwd 'hello' // опечатка
+   19  echo $pwd 'hello' // опечатка
+   20  echo $PWD 'hello' // вивід в термінал значення змінної PWD і рядка 'hello'
+   21  touch test.sh // створення файлу test.sh
+   22  ls
+   23  rm test.sh // видалення файлу test.sh
+   24  ls
+   25  echo $PATH // вивід в термінал значення змінної PATH
+   26  vi hi.sh // відкрити файл hi.sh у редакторі vim
+   27  ls
+   28  vi hi.sh
+   29  ls
+   30  vi hi.sh 
+   31  ls
+   32  clear
+   33  hi.sh
+   34  ./hi.sh // запустити файл на виконання
+   35  sudo ./hi.sh
+   36  ./hi.sh
+   37  ls
+   38  clear
+   39  vi hiall.sh
+   40  ./hiall.sh
+   41  ls -l
+   42  chmod +x ./hiall.sh // надати дозвіл на виконання файла hiall.sh
+   43  ./hiall.sh
+   44  ./hiall.sh test // виклик файлу hiall.sh з параметром test
+   45  ./hiall.sh test1 test2 // // виклик файлу hiall.sh з параметрами test1 і test2
+   46  clear
+   47  ls
+   48  cp ./hiall.sh Documents/ // скопіювати файл hiall.sh в папку Documents
+   49  cat Documents/ // опечатка 
+   50  ls Documents/ // показати вміст папки Documents 
+   51  ls
+   52  rm Documents/hiall.sh // видалити файл hiall.sh з папки Documents 
+   53  ls Documents/
+   54  cd bin
+   55  cd /bin // перехід в директорію bin
+   56  ls
+   57  cd
+   58  ls
+   59  rm hi.sh
+   60  mkdir hiscript // створити нову папку 'hiscrip'
+   61  mv hiall.sh hiscript/ // перемістити файл hiall.sh в папку hiscript
+   62  ls
+   63  ls hiscript/
+   64  tar cvf hiscript.tar hiscript/ // створити tar-архів з іменем 'hiscript.tar' з папки 'hiscript'. Прапор 'c' означає create/compress, прапор 'v' означає показати статус, а прапор 'f' дозволяє вказати ім'я для архіва
+   65  cat /var/log/syslog // вивести в термінал вміст файлу syslog - це файл з логами, які записує сама система
+   66  cat /var/log/syslog | grep mtd // вивід команди 'cat' передати у команду 'grep', яка буде шукати там слово 'mtd'
+   67  tail -n20 /var/log/syslog // показати останні 20 рядків файлу syslog
+   68  less -n 20 /var/log/syslog // показати вміст файлу syslog з можливістю скролу
+   69  less -n20 /var/log/syslog 
+   70  find . -name dhcp // у поточній директорії знайти всі файли і папки, які мають ім'я 'dhcp'
+   71  cd /
+   72  find . -name dhcp
+   73  find . -name *dhcp* // у поточній директорії знайти всі файли і папки, які мають слово 'dhcp' у назві
+   74  find . -name *dhcp* | grep -i dhcp // вивід команди 'find' передати на вхід команді 'grep', яка виділить там слова 'dhcp' 
+   75  find . -name *dhcp* | grep -i dhcp
+   76  find . -name *dhcp* | grep -i /etc
+   77  clear
+   78  cd
+   79  clear
+   80  ping google.com // перевіряємо чи доступний хост 'google.com'. за допомогою клавіш Ctrl+C можемо зупинити пінгування
+   81  ping google.com& // запускаємо пінгування хоста у бекграунді (background - задній план)
+   82  fg // премітити поточний процес у форграунд (foreground - передній план)
+   83  ping google.com&
+   84  sudo ping google.com // запускаємо пінгування від імені рута
+   85  sudo ping google.com&
+   86  sudo ping google.com&
+   87  fg
+   88  clear
+   89  dmesg // вивід в термінал буфера повідомлень ядра системи
+   90  ps aux // перелік всіх процесів і їхніх статусів
+   91  ps aux | grep -i ping // серед переліку процесів знайти і виділити ті, у яких у назві є слово 'ping'
+   92  clear
+   93  sudo dmesg
+   94  clear
+   95  lsmod // показує всі завантажені модулі системи
+   96  cd /
+   97  cat /proc/cpuinfo // показує інформацію про процесор
+   98  clear
+   99  history // показує історію викликів команд
+  100  cd
+  101  clear
+  102  df // показує інформацію про диски
+  103  ls
+  104  rm hiscript
+  105  rm -rf hiscript.tar // видалити архів 'hiscript.tar'. прапор 'r' означає рекурсивно
+  106  ls
+  107  rm -rf hiscript/
+  108  ls
+  109  clear
+  110  history
+  111  history > history.txt // запис історії у файл 'history.txt'
