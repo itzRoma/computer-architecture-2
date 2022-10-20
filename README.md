@@ -1,1 +1,3 @@
-# starter branch for labs
+# computer architecture 2
+
+Doing labs for ca2.
