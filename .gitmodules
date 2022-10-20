@@ -1,0 +1,3 @@
+[submodule "lab2/calculator"]
+	path = lab2/calculator
+	url = https://github.com/itzRoma/ca2-lab2.git
