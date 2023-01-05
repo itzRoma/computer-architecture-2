@@ -7,7 +7,7 @@
 #include <linux/slab.h>
 
 MODULE_AUTHOR("Bondarenko Roman from IO-03");
-MODULE_DESCRIPTION("Laboratory work #6");
+MODULE_DESCRIPTION("Laboratory work #7");
 MODULE_LICENSE("Dual BSD/GPL");
 
 static unsigned int prints_num = 1;
@@ -25,7 +25,7 @@ static struct list_head event_list_head;
 
 static LIST_HEAD(event_list_head);
 
-void new_event(void);
+void new_event(int);
 
 static int __init hello_init(void)
 {
@@ -37,15 +37,17 @@ static int __init hello_init(void)
     	printk(KERN_WARNING "WARNING: parameter is between 5 and 10");
     }
 
-    if (prints_num > 10) {
-        printk(KERN_ERR "ERROR: parameter is too large, should be less than 10");
-        return -EINVAL;
-    }
+    // if (prints_num > 10) {
+    //     printk(KERN_ERR "ERROR: parameter is too large, should be less than 10");
+    //     return -EINVAL;
+    // }
+
+    BUG_ON(prints_num > 10);
   
     int i;
     for (i = 0; i < prints_num; i++) {
         printk(KERN_EMERG "Hello, World!\n");
-        new_event();
+        new_event(i);
     }
     return 0;
 }
@@ -59,9 +61,12 @@ static void __exit hello_exit(void) {
   }
 }
 
-void new_event(void) {
+void new_event(int i) {
     struct event_list *element = NULL;
     element = kmalloc(sizeof(struct event_list), GFP_KERNEL);
+
+    BUG_ON(i == 7);
+
     element->event_time = ktime_get();
     list_add_tail(&element->list, &event_list_head);
 }
